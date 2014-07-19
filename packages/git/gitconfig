@@ -1,0 +1,19 @@
+[alias]
+        st="status"
+        co="checkout"
+        amend="commit --amend"
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+        ui = auto
+        [color "status"]
+            changed = yellow
+            untracked = magenta
+[user]
+        email = cprodescu@gmail.com
+[core]
+        excludesfile = .gitignore_global
+[push]
+        default = simple
