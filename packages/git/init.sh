@@ -1,2 +1,2 @@
-ln -s gitconfig $HOME/.gitconfig
-ln -s gitignore_global $HOME/.gitignore_global
+export_file gitconfig $HOME/.gitconfig
+export_file gitignore_global $HOME/.gitignore_global
