@@ -1,0 +1,30 @@
+" Open file at last position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" Coding tweaks
+set autoindent
+set smartindent
+
+" Tab preferences
+set tabstop=4
+set shiftwidth=4
+set expandtab
+autocmd FileType make setlocal noexpandtab 	" No expandtab in make files
+
+" Show ruler
+set ruler
+" set rnu         " relative line numbers
+
+" Pattern Matching
+set ignorecase
+set showmatch
+set hlsearch    " highlight search
+
+" Fix backspace
+set backspace=indent,eol,start
+
+" Others
+set showcmd	    " Show (partial) command in status line.
+syntax on

@@ -1,19 +1,13 @@
 #!/bin/bash -e
 
-export_file() {
-    SOURCE="$1"
-    TARGET="$2"
-
-    rm -f $TARGET
-    ln -s $(pwd)/$SOURCE $TARGET
-}
+. vars.sh
 
 for package in packages/*; do
     cd $package
     if [ -r init.sh ]; then
-        echo "Installing $package"
-        pwd
+        echo "Installing $package ..."
         . init.sh
     fi
-    cd -
+    cd - > /dev/null
 done
+echo "Done."
