@@ -15,9 +15,9 @@ git_clone() {
 
     check_bin git
 
-    rm -rf $DESTINATION
+    rm -rf "$DESTINATION"
     echo -n " -> Cloning $URL ... "
-    \git clone $URL $DESTINATION > /dev/null 2>&1
+    \git clone "$URL" "$DESTINATION" > /dev/null 2>&1
     echo "Done"
 }
 
@@ -27,8 +27,14 @@ export_file() {
 
     check_bin ln
 
-    rm -f $TARGET
+    if [ -h "$TARGET" ]; then
+        rm -f "$TARGET"
+    else
+        if [ -f $TARGET ]; then
+            mv "$TARGET" "$TARGET.backup"
+        fi
+    fi
     echo -n " -> Linking $SOURCE -> $TARGET ... "
-    ln -s `pwd`/$SOURCE $TARGET
+    ln -s "`pwd`/$SOURCE" "$TARGET"
     echo "Done"
 }

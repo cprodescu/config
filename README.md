@@ -15,4 +15,5 @@ To install, run
     curl https://raw.githubusercontent.com/cprodescu/config/master/install.sh | sh
 
 This will clone this repo along with the required dependencies and replace your
-configuration files with the ones provided here.
+configuration files with the ones provided here. The old files are renamed as
+`<filename>.backup`
