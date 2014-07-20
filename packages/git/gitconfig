@@ -13,6 +13,7 @@
             untracked = magenta
 [user]
         email = cprodescu@gmail.com
+        name = "Corneliu C. Prodescu"
 [core]
         excludesfile = .gitignore_global
 [push]

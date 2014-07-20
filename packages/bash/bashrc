@@ -1,6 +1,11 @@
 # Set CLICOLOR if you want Ansi Colors in iTerm2 
 export CLICOLOR=1
 
+# bash completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 # homebrew bash completion
 if which brew > /dev/null && [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
